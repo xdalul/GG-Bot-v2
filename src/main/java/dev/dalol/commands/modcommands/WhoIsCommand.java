@@ -22,7 +22,7 @@ public class WhoIsCommand extends ListenerAdapter {
                 builder.addField("Rollen", member.getRoles().stream().findAny().get().getAsMention(), true);
                 // TODO timeout, banned
 
-                builder.addField("Timeout", String.valueOf(member.isTimedOut()), true);
+                builder.addField("Timeouta", String.valueOf(member.isTimedOut()), true);
 
                 event.replyEmbeds(builder.build()).queue();
             }

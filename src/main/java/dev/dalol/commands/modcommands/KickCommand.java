@@ -17,7 +17,7 @@ public class KickCommand extends ListenerAdapter {
             if (event.getMember().hasPermission(Permission.ADMINISTRATOR)) {
                 try {
                     member.kick().reason(grund).queue();
-                    event.reply("Du hast erfolgreich **" + member.getAsMention() + "** wegen **" + grund + "** gekickt.").setEphemeral(true).queue();
+                    event.reply("Du hast erfolgreicha **" + member.getAsMention() + "** wegen **" + grund + "** gekickt.").setEphemeral(true).queue();
                     user.openPrivateChannel().queue((PrivateChannel channel) -> {
 
                         // TODO Kick DMs

@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class TimeoutCommand extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
-        if (event.getName().equals("timeout")) {
+        if (event.getName().equals("timeouta")) {
             Member member = event.getOption("nutzer").getAsMember();
             String grund = event.getOption("grund").getAsString();
             User user = event.getOption("nutzer").getAsUser();

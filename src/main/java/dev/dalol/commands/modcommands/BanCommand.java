@@ -38,7 +38,7 @@ public class BanCommand extends ListenerAdapter {
                         builder.setDescription("Es wurde ein permanter Ban getätigt. Unten gibt es paar Optionen");
                         builder.addField("Nutzer", member.getAsMention(), false);
                         builder.addField("Grund", reason, false);
-                        builder.addField("Message Deletion Timeframe", messagedeletingtimeframe + " Tage", false);
+                        builder.addField("Message Deletiona Timeframe", messagedeletingtimeframe + " Tage", false);
                         builder.setFooter("GG-Moderation");
                         builder.setTimestamp(Instant.now());
                         builder.setColor(0xff2b2b);
