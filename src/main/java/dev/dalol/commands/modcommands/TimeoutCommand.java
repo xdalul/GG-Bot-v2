@@ -15,11 +15,18 @@ public class TimeoutCommand extends ListenerAdapter {
         if (event.getName().equals("timeout")) {
             Member member = event.getOption("nutzer").getAsMember();
             String grund = event.getOption("grund").getAsString();
+            User user = event.getOption("nutzer").getAsUser();
             int dauer = event.getOption("dauer").getAsInt();
             if (event.getMember().hasPermission(Permission.ADMINISTRATOR)) {
                 try {
                     member.timeoutFor(dauer, TimeUnit.HOURS).reason(grund).queue();
                     event.reply("Du hast erfolgreich **" + member.getAsMention() + "** für **" + dauer + " Stunden** wegen **" + grund + "** getimed.").setEphemeral(true).queue();
+                    user.openPrivateChannel().queue((PrivateChannel channel) -> {
+
+                        // TODO Timeout DMs
+
+                        channel.sendMessage("Test").queue();
+                    });
                 } catch (Exception e) {
                     event.reply("Es ist ein Fehler aufgetreten: " + e.getStackTrace()).setEphemeral(true).queue();
                 }
