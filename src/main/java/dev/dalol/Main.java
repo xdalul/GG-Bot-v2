@@ -29,7 +29,7 @@ public class Main {
                     .filename("env")
                     .load();
 
-            JDA jda = JDABuilder.createDefault("MTA3MTU2ODE2MDIyODEzNDkyMg.GJ9rTc.Y6CTTWPLr4SvYdW6DxRm951UmxPyx5sAqdfIX8")
+            JDA jda = JDABuilder.createDefault(dotenv.get("TEST_BOT"))
                     .setActivity(Activity.playing("GG-Games"))
                     .setStatus(OnlineStatus.ONLINE)
                     .enableIntents(GatewayIntent.MESSAGE_CONTENT)
